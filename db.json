@@ -1,8 +1,18 @@
 [
   {
+    "id": "0",
     "name": "ООО Транспортная компания 1",
     "description": "Блаблабла",
     "founding_date": "20.04.2014",
-    "head": "0"
+    "head": "0",
+    "car_park": [
+      {
+        "name": "Машина директора",
+        "model": "BMW X6",
+        "purchase_date": "23.04.2015",
+        "description": "НИКАМУ НЕ ТРОГАТбб",
+        "drivers": ["0"]
+      }
+    ]
   }
 ]

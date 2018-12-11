@@ -14,31 +14,55 @@ usersFile.close()
 
 def find_user(login):
     for user in users:
-        print(user)
         if user.get('login') == login:
             return user
     return None
 
 
 def get(request):
-    return HttpResponse("Hello, world!")
+    login = request.GET.get('login')
+    password = request.GET.get('password')
+    user = check_user(login, password)
+
+    if user is None:
+        return HttpResponse(status=401)
+    return get_data(user)
+
+
+def find_company(id):
+    for comp in db:
+        print(comp)
+        if comp.get('id') == id:
+            return comp
+    return None
+
+
+def get_data(user):
+    company = find_company(user.get('company'))
+    if user.get('access') == 0:
+        print(company)
+        return JsonResponse(company)
 
 
 def post(request):
     return HttpResponse("Hello, world!")
 
 
+def check_user(login, password):
+    if not (login and password):
+        return None
+    user = find_user(login)
+    if user is None or user.get('password') != password:
+        return None
+    return user
+
+
 def signIn(request):
     login = request.GET.get('login')
     password = request.GET.get('password')
-
-    if not (login and password):
-        return HttpResponse(status=400)
-    user = find_user(login)
+    user = check_user(login, password)
 
     if user is None:
-        return HttpResponse(status=400)
+        return HttpResponse(status=401)
 
-    if user.get('password') == password:
-        return JsonResponse(user)
-    return HttpResponse(status=400)
+    return JsonResponse(user)

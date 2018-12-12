@@ -20,4 +20,5 @@ urlpatterns = [
     path('get', views.get),
     path('save-org', views.save_org),
     path('sign-in', views.sign_in),
+    path('sign-up', views.sign_up),
 ]

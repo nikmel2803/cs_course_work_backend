@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import uuid
 
 import json
 
@@ -77,7 +78,6 @@ def sign_in(request):
 @csrf_exempt
 def save_org(request):
     data = json.loads(request.body)
-    print(data)
     login = data.get('login')
     password = data.get('password')
     user = check_user(login, password)
@@ -99,3 +99,45 @@ def save_db():
     dbFile = open("db.json", "w", encoding="utf8")
     dbFile.write(json.dumps(db, ensure_ascii=False))
     dbFile.close()
+
+
+def save_users():
+    usersFile = open("users.json", "w", encoding="utf8")
+    usersFile.write(json.dumps(users, ensure_ascii=False))
+    usersFile.close()
+
+
+@csrf_exempt
+def sign_up(request):
+    data = json.loads(request.body)
+    orgId = str(uuid.uuid4())
+    userId = str(uuid.uuid4())
+    user = {
+        "id": userId,
+        "login": data.get('login'),
+        "first_name": data.get('first_name'),
+        "password": data.get('password'),
+        "last_name": data.get('last_name'),
+        "patronymic": data.get('patronymic'),
+        "birthday": data.get('birthday'),
+        "position": "Глава компании",
+        "access": 0,
+        "sex": data.get('sex'),
+        "company": orgId
+    }
+    org_data = data.get('orgData')
+    org = {
+        "id": orgId,
+        "name": org_data.get('name'),
+        "description": org_data.get('description'),
+        "founding_date": org_data.get('founding_date'),
+        "address": org_data.get('address'),
+        "head": userId,
+        "car_park": [],
+        "employees": []
+    }
+    users.append(user)
+    db.append(org)
+    save_db()
+    save_users()
+    return HttpResponse(status=200)

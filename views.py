@@ -91,11 +91,11 @@ def save_org(request):
             comp['description'] = orgData.get('description')
             comp['founding_date'] = orgData.get('founding_date')
             comp['address'] = orgData.get('address')
-
-    return HttpResponse('true')
+    save_db()
+    return HttpResponse(status=200)
 
 
 def save_db():
     dbFile = open("db.json", "w", encoding="utf8")
-    dbFile.write(json.dumps(db))
+    dbFile.write(json.dumps(db, ensure_ascii=False))
     dbFile.close()

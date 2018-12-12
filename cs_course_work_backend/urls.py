@@ -18,5 +18,6 @@ import views
 
 urlpatterns = [
     path('get', views.get),
-    path('signIn', views.signIn),
+    path('save-org', views.save_org),
+    path('sign-in', views.sign_in),
 ]

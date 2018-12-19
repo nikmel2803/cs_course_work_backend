@@ -8,37 +8,32 @@
     "head": "0",
     "car_park": [
       {
-        "name": "Машина директора",
+        "name": "Машина директораqwd",
         "model": "BMW X6",
-        "purchase_date": "23.04.2015",
-        "description": "НИКАМУ НЕ ТРОГАТбб",
-        "drivers": [
-          "0"
-        ]
+        "purchase_date": "23.04.2015ws",
+        "description": "НИКАМУ НЕ ТРОГАТбб"
       },
       {
         "name": "Рабочая лошадка",
+        "status": "Свободна",
         "model": "Жигули",
         "purchase_date": "23.04.2015",
         "description": "Катайся кто хочет",
         "drivers": [
           "0"
         ]
-      }
-    ],
-    "employees": [
+      },
       {
-        "id": "0",
-        "login": "petr0",
-        "password": "1234",
-        "company": "0",
-        "access": 0,
-        "first_name": "Petr",
-        "last_name": "Petrovich",
-        "patronymic": "Petrov",
-        "sex": 0,
-        "birthday": "28.11.1990",
-        "position": "Driver"
+        "name": "Наwdwdименование",
+        "model": "Модель",
+        "purchase_date": "Дата приобретения",
+        "description": "Описwdwdание"
+      },
+      {
+        "name": "Наименование",
+        "model": "Модель",
+        "purchase_date": "Дата приобретения",
+        "description": "Описание"
       }
     ]
   },

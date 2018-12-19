@@ -85,27 +85,15 @@ def save_org(request):
     if user is None:
         return HttpResponse(status=401)
     orgData = data.get('orgData')
-    for comp in db:
-        if comp.get('id') == orgData.get('id'):
-            comp['name'] = orgData.get('name')
-            comp['description'] = orgData.get('description')
-            comp['founding_date'] = orgData.get('founding_date')
-            comp['address'] = orgData.get('address')
+    for i in range(len(db)):
+        if db[i].get('id') == orgData.get('id'):
+            try:
+                del orgData["employees"]
+            except KeyError:
+                print("Key 'employees' not found")
+            db[i] = orgData
     save_db()
     return HttpResponse(status=200)
-
-
-def save_db():
-    dbFile = open("db.json", "w", encoding="utf8")
-    dbFile.write(json.dumps(db, ensure_ascii=False))
-    dbFile.close()
-
-
-def save_users():
-    usersFile = open("users.json", "w", encoding="utf8")
-    usersFile.write(json.dumps(users, ensure_ascii=False))
-    usersFile.close()
-
 
 @csrf_exempt
 def sign_up(request):
@@ -141,3 +129,15 @@ def sign_up(request):
     save_db()
     save_users()
     return HttpResponse(status=200)
+
+
+def save_db():
+    dbFile = open("db.json", "w", encoding="utf8")
+    dbFile.write(json.dumps(db, ensure_ascii=False))
+    dbFile.close()
+
+
+def save_users():
+    usersFile = open("users.json", "w", encoding="utf8")
+    usersFile.write(json.dumps(users, ensure_ascii=False))
+    usersFile.close()

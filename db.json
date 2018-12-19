@@ -9,7 +9,7 @@
     "car_park": [
       {
         "name": "Машина директораqwd",
-        "status": "Свободна",
+        "status": "Занята",
         "model": "BMW X6",
         "purchase_date": "23.04.2015ws",
         "description": "НИКАМУ НЕ ТРОГАТбб"

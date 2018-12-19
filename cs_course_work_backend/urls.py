@@ -17,8 +17,8 @@ from django.urls import path
 import views
 
 urlpatterns = [
-    path('get', views.get),
+    path('get-data', views.get_data),
     path('save-org', views.save_org),
     path('sign-in', views.sign_in),
-    path('sign-up', views.sign_up),
+    path('register-org', views.register_org),
 ]

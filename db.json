@@ -1,49 +1,32 @@
 [
   {
-    "id": "0",
+    "id": "b0c9ff20-2525-4073-866f-a29fa09f4661",
     "name": "ООО Компанияad 121",
     "description": "Блаблаdwwedблафв",
     "founding_date": "20.04.2014",
     "address": "СПб, гыгыг",
-    "head": "0",
+    "head": "12369e9b-d2a0-48e7-a834-bdac5f7f709b",
     "car_park": [
       {
         "name": "Машина директораqwd",
+        "status": "Свободна",
         "model": "BMW X6",
         "purchase_date": "23.04.2015ws",
         "description": "НИКАМУ НЕ ТРОГАТбб"
-      },
+      }
+    ],
+    "employees": [
       {
-        "name": "Рабочая лошадка",
-        "status": "Свободна",
-        "model": "Жигули",
-        "purchase_date": "23.04.2015",
-        "description": "Катайся кто хочет",
-        "drivers": [
-          "0"
-        ]
-      },
-      {
-        "name": "Наwdwdименование",
-        "model": "Модель",
-        "purchase_date": "Дата приобретения",
-        "description": "Описwdwdание"
-      },
-      {
-        "name": "Наименование",
-        "model": "Модель",
-        "purchase_date": "Дата приобретения",
-        "description": "Описание"
+        "login": "nikmel",
+        "first_name": "Никита",
+        "password": "123",
+        "last_name": "Мельников",
+        "patronymic": "Павлович",
+        "birthday": "28.03.2000",
+        "position": "Глава компании",
+        "access": 0,
+        "sex": 1
       }
     ]
-  },
-  {
-    "id": "b0c9ff20-2525-4073-866f-a29fa09f4661",
-    "name": "ООО Красный Ярwedwed",
-    "description": "Перевозки яриков",
-    "founding_date": "28.30.2332jnl",
-    "address": "Спб лиговскиkjnй",
-    "head": "12369e9b-d2a0-48e7-a834-bdac5f7f709b",
-    "car_park": []
   }
 ]
